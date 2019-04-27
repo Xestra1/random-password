@@ -20,9 +20,6 @@ function generate() {
     var charLength = document.getElementById("length").value;
 
     checkArray();
-    checkArray();
-    checkArray();
-    checkArray();
 
     appendArrays();
 
@@ -35,13 +32,28 @@ function checkArray() {
     if (document.getElementById("symbols").checked === true && useSymbols === false) {
         useSymbols = true;
         // console.log('symbols ' + useSymbols);
-    } else if (document.getElementById("numbers").checked === true && useNumbers === false) {
+    } else {
+        // console.log('none selected');
+        document.getElementById("password").innerHTML = "none selected";
+    }
+
+    if (document.getElementById("numbers").checked === true && useNumbers === false) {
         useNumbers = true;
         // console.log('numbers ' + useNumbers);
-    } else if (document.getElementById("lowercase").checked === true && useLowercase === false) {
+    } else {
+        // console.log('none selected');
+        document.getElementById("password").innerHTML = "none selected";
+    }
+
+    if (document.getElementById("lowercase").checked === true && useLowercase === false) {
         useLowercase = true;
         // console.log('lowercase ' + useLowercase);
-    } else if (document.getElementById("uppercase").checked === true && useUppercase === false) {
+    } else {
+        // console.log('none selected');
+        document.getElementById("password").innerHTML = "none selected";
+    }
+
+    if (document.getElementById("uppercase").checked === true && useUppercase === false) {
         useUppercase = true;
         // console.log('uppercase ' + useUppercase);
     } else {
