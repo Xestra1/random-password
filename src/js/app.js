@@ -28,7 +28,7 @@ function generate() {
 
     password(passwordChars, charLength);
 
-    reset();
+    // reset();
 }
 
 function checkArray() {
@@ -102,4 +102,5 @@ function reset() {
     useLowercase = false;
     useUppercase = false;
     passwordChars = [];
+    document.getElementById("password").innerHTML = "Reset successful";
 }
