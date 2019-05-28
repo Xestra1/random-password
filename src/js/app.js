@@ -25,39 +25,31 @@ function generate() {
 
     password(passwordChars, charLength);
 
-    // reset();
+    reset();
 }
 
 function checkArray() {
     if (document.getElementById("symbols").checked === true && useSymbols === false) {
         useSymbols = true;
-        // console.log('symbols ' + useSymbols);
     } else {
-        // console.log('none selected');
         document.getElementById("password").innerHTML = "none selected";
     }
 
     if (document.getElementById("numbers").checked === true && useNumbers === false) {
         useNumbers = true;
-        // console.log('numbers ' + useNumbers);
     } else {
-        // console.log('none selected');
         document.getElementById("password").innerHTML = "none selected";
     }
 
     if (document.getElementById("lowercase").checked === true && useLowercase === false) {
         useLowercase = true;
-        // console.log('lowercase ' + useLowercase);
     } else {
-        // console.log('none selected');
         document.getElementById("password").innerHTML = "none selected";
     }
 
     if (document.getElementById("uppercase").checked === true && useUppercase === false) {
         useUppercase = true;
-        // console.log('uppercase ' + useUppercase);
     } else {
-        // console.log('none selected');
         document.getElementById("password").innerHTML = "none selected";
     }
 }
@@ -65,28 +57,24 @@ function checkArray() {
 function appendArrays() {
     if (useSymbols === true) {
         passwordChars = passwordChars.concat(symbols);
-        // console.log(passwordChars);
     } else {
         console.log("Symbols not used");
     }
 
     if (useNumbers === true) {
         passwordChars = passwordChars.concat(numbers);
-        // console.log(passwordChars);
     } else {
         console.log("Symbols not used");
     }
 
     if (useLowercase === true) {
         passwordChars = passwordChars.concat(lowercase);
-        // console.log(passwordChars);
     } else {
         console.log("Symbols not used");
     }
 
     if (useUppercase === true) {
         passwordChars = passwordChars.concat(uppercase);
-        // console.log(passwordChars);
     } else {
         console.log("Symbols not used");
     }
@@ -99,13 +87,9 @@ function password(array, totalLength) {
         array[i] = array[j];
         array[j] = temp;
     }
-    // console.log(array);
-
     array.length = totalLength;
     var password = array.join('');
     document.getElementById("password").innerHTML = password;
-    // console.log(password);
-    // console.log(array);
 }
 
 function reset() {
@@ -114,5 +98,4 @@ function reset() {
     useLowercase = false;
     useUppercase = false;
     passwordChars = [];
-    document.getElementById("password").innerHTML = "Reset successful";
 }
